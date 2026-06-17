@@ -1,0 +1,155 @@
+[
+    {
+        "stepTitle": "欢迎安装",
+        "items": [
+            {
+                "type": "tips",
+                "helpText": "Edge 会在 Docker 容器中运行，并通过 HTTPS 在浏览器中访问。"
+            },
+            {
+                "type": "tips",
+                "helpText": "本应用基于 <a target=\"_blank\" href=\"https://github.com/linuxserver/docker-msedge\">linuxserver/msedge</a>。容器内浏览器具备访问局域网和互联网的能力，请勿直接暴露到公网。"
+            },
+            {
+                "type": "switch",
+                "field": "agree_terms",
+                "label": "我已知晓并同意遵守上游项目、Microsoft Edge 及相关服务条款",
+                "rules": [
+                    {
+                        "required": true,
+                        "message": "请确认你已知晓相关条款和安全风险"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "stepTitle": "访问设置",
+        "items": [
+            {
+                "type": "tips",
+                "helpText": "安装完成后，通过 https://你的设备:容器HTTPS端口/edge/ 访问。默认端口为 3443。"
+            },
+            {
+                "type": "text",
+                "field": "server_port",
+                "label": "容器 HTTPS 端口",
+                "initValue": "3443"
+            },
+            {
+                "type": "text",
+                "field": "edge_username",
+                "label": "访问用户名",
+                "initValue": "edge"
+            },
+            {
+                "type": "password",
+                "field": "edge_password",
+                "label": "访问密码",
+                "rules": [
+                    {
+                        "required": true,
+                        "message": "请设置访问密码"
+                    }
+                ]
+            },
+            {
+                "type": "text",
+                "field": "startup_url",
+                "label": "默认启动页",
+                "helpText": "用于避免 Edge 首次运行页或恢复会话偶发黑屏。可改成你常用的网址。",
+                "initValue": "https://www.bing.com"
+            }
+        ]
+    },
+    {
+        "stepTitle": "运行设置",
+        "items": [
+            {
+                "type": "text",
+                "field": "edge_image",
+                "label": "容器镜像",
+                "helpText": "默认使用 latest 方便后续更新浏览器版本；若需要回退，可改为 lscr.io/linuxserver/msedge:149.0.4022.69-1-ls173。",
+                "initValue": "lscr.io/linuxserver/msedge:latest"
+            },
+            {
+                "type": "text",
+                "field": "dri_render_node",
+                "label": "GPU 渲染节点",
+                "initValue": "/dev/dri/renderD128"
+            },
+            {
+                "type": "text",
+                "field": "puid",
+                "label": "PUID",
+                "helpText": "建议填写阶段一验证通过的用户 UID。你的 NAS 之前是 1000。",
+                "initValue": "1000"
+            },
+            {
+                "type": "text",
+                "field": "pgid",
+                "label": "PGID",
+                "helpText": "建议填写阶段一验证通过的用户 GID。你的 NAS 之前是 1001。",
+                "initValue": "1001"
+            },
+            {
+                "type": "text",
+                "field": "max_res",
+                "label": "最大分辨率",
+                "helpText": "远程桌面的最大画布。默认 1920x1080 更稳，4K 可手动改为 3840x2160。",
+                "initValue": "1920x1080"
+            },
+            {
+                "type": "text",
+                "field": "edge_window_size",
+                "label": "Edge 初始窗口尺寸",
+                "helpText": "默认不贴满屏幕，给扩展确认框、菜单等弹窗留出边界空间。",
+                "initValue": "1600,900"
+            },
+            {
+                "type": "text",
+                "field": "edge_window_position",
+                "label": "Edge 初始窗口位置",
+                "helpText": "格式为 x,y。默认 40,40，避免窗口贴边导致弹窗被裁切。",
+                "initValue": "40,40"
+            },
+            {
+                "type": "text",
+                "field": "cpu_limit",
+                "label": "CPU 限制",
+                "initValue": "4"
+            },
+            {
+                "type": "text",
+                "field": "memory_limit",
+                "label": "内存限制",
+                "initValue": "4g"
+            },
+            {
+                "type": "text",
+                "field": "timezone",
+                "label": "时区",
+                "initValue": "Asia/Shanghai"
+            },
+            {
+                "type": "text",
+                "field": "locale",
+                "label": "语言环境",
+                "initValue": "zh_CN.UTF-8"
+            },
+            {
+                "type": "text",
+                "field": "app_title",
+                "label": "页面标题",
+                "initValue": "Edge"
+            },
+            {
+                "type": "text",
+                "field": "wayland_enabled",
+                "label": "启用 Wayland",
+                "helpText": "7840HS 支持 Wayland；若后续出现兼容问题，可改为 false 使用 X11 fallback。",
+                "initValue": "true"
+            }
+        ]
+    }
+]

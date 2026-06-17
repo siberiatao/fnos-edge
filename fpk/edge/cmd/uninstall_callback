@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -e
+
+# App Center normally stops/removes Docker projects from config/resource, but
+# removing our known container here makes repeated development installs safer.
+if command -v docker >/dev/null 2>&1; then
+    docker rm -f edge >/dev/null 2>&1 || true
+fi
+
+rm -rf /var/apps/edge/shares/data/config/.XDG
+rm -rf /var/apps/edge/shares/data/config/.cache/labwc
+rm -f /var/apps/edge/shares/data/config/.Xauthority
+
+if [ "$wizard_delete_data" = "true" ]; then
+    rm -rf /var/apps/edge/shares/data/config
+    rm -rf /var/apps/edge/shares/downloads
+fi
+
+exit 0

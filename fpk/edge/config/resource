@@ -1,0 +1,48 @@
+{
+    "docker-project":
+    {
+        "projects":
+        [
+            {
+                "name": "edge",
+                "path": "app"
+            }
+        ]
+    },
+    "data-share":
+    {
+        "shares":
+        [
+            {
+                "name": "edge",
+                "permission":
+                {
+                    "rw":
+                    [
+                        "edge"
+                    ]
+                }
+            },
+            {
+                "name": "edge/data",
+                "permission":
+                {
+                    "rw":
+                    [
+                        "edge"
+                    ]
+                }
+            },
+            {
+                "name": "edge/downloads",
+                "permission":
+                {
+                    "rw":
+                    [
+                        "edge"
+                    ]
+                }
+            }
+        ]
+    }
+}

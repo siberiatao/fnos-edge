@@ -1,0 +1,18 @@
+appname=edge
+version=0.6.3
+display_name="Edge"
+desc="""<strong>运行在 fnOS 上的浏览器版 Microsoft Edge。</strong><br/>
+本应用基于 LinuxServer.io 的 msedge 容器，将远程 Edge 封装为 fnOS 桌面应用。<br/>
+当前版本面向 x86_64 设备，默认启用 HTTPS 直连端口、/edge/ 访问路径、Wayland、AMD/Intel /dev/dri GPU 透传、持久化用户配置和基础访问认证。<br/>
+Microsoft Edge 及其图标是 Microsoft 的商标。<br/>
+请勿在未配置额外认证、VPN 或可信反向代理的情况下暴露到公网。
+"""
+arch=x86_64
+source=thirdparty
+maintainer=LinuxServer.io
+maintainer_url=https://github.com/linuxserver/docker-msedge
+distributor=SiberiaTao
+desktop_uidir=ui
+os_min_ver="7.2-64555"
+reloadui="yes"
+desktop_appname="edge.Application"

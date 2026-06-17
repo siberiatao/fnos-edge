@@ -1,0 +1,37 @@
+name: fnos-edge-phase1
+
+services:
+  msedge:
+    image: ${EDGE_IMAGE}
+    container_name: fnos-edge-phase1
+    restart: unless-stopped
+    shm_size: "2gb"
+    ports:
+      - "${EDGE_HTTPS_PORT:?Set EDGE_HTTPS_PORT in .env}:3001"
+    volumes:
+      - ./data/config:/config
+    devices:
+      - /dev/dri:/dev/dri
+    environment:
+      PUID: ${PUID:?Set PUID in .env}
+      PGID: ${PGID:?Set PGID in .env}
+      TZ: ${TZ}
+      LC_ALL: ${EDGE_LOCALE}
+      CUSTOM_USER: ${EDGE_USERNAME:?Set EDGE_USERNAME in .env}
+      PASSWORD: ${EDGE_PASSWORD:?Set EDGE_PASSWORD in .env}
+      TITLE: ${EDGE_TITLE}
+      PIXELFLUX_WAYLAND: "true"
+      DRINODE: ${DRI_RENDER_NODE}
+      DRI_NODE: ${DRI_RENDER_NODE}
+      MAX_RES: ${MAX_RES}
+      NO_DECOR: "true"
+      HARDEN_DESKTOP: "true"
+      HARDEN_OPENBOX: "true"
+      START_DOCKER: "false"
+      SELKIES_ENABLE_SHARING: "false"
+      SELKIES_ENABLE_COLLAB: "false"
+      SELKIES_ENABLE_SHARED: "false"
+      SELKIES_COMMAND_ENABLED: "false"
+      SELKIES_FILE_TRANSFERS: "upload,download"
+    security_opt:
+      - no-new-privileges:true

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+mkdir -p /var/apps/edge/shares/data/config
+mkdir -p /var/apps/edge/shares/downloads
+
+# Stale Wayland/XDG sockets from previous development installs can make the
+# Selkies desktop loop forever before WebSocket becomes usable.
+rm -rf /var/apps/edge/shares/data/config/.XDG
+rm -rf /var/apps/edge/shares/data/config/.cache/labwc
+rm -f /var/apps/edge/shares/data/config/.Xauthority
+
+exit 0

@@ -1,0 +1,13 @@
+{
+    ".url": {
+        "edge.Application": {
+            "title": "Edge",
+            "icon": "images/icon_{0}.png",
+            "type": "url",
+            "protocol": "https",
+            "port": "3443",
+            "url": "/edge/",
+            "allUsers": false
+        }
+    }
+}
