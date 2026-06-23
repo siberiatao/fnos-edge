@@ -9,11 +9,11 @@ services:
     mem_limit: "${memory_limit}"
     shm_size: "2gb"
     ports:
+      - "3002:3000"
       - "${server_port}:3001"
     volumes:
       - "/var/apps/edge/shares/data/config:/config"
       - "/var/apps/edge/shares/downloads:/downloads"
-      - "./custom-cont-init.d:/custom-cont-init.d:ro"
     devices:
       - "/dev/dri:/dev/dri"
     environment:
@@ -23,15 +23,10 @@ services:
       - LC_ALL=${locale}
       - CUSTOM_USER=${edge_username}
       - PASSWORD=${edge_password}
-      - SUBFOLDER=/edge/
-      - EDGE_STARTUP_URL=${startup_url}
-      - EDGE_WINDOW_SIZE=${edge_window_size}
-      - EDGE_WINDOW_POSITION=${edge_window_position}
       - TITLE=${app_title}
       - PIXELFLUX_WAYLAND=${wayland_enabled}
       - DRINODE=${dri_render_node}
       - DRI_NODE=${dri_render_node}
-      - MAX_RES=${max_res}
       - NO_DECOR=true
       - HARDEN_DESKTOP=true
       - HARDEN_OPENBOX=true
@@ -44,4 +39,3 @@ services:
       - FILE_MANAGER_PATH=/downloads
     security_opt:
       - no-new-privileges:true
-    network_mode: bridge

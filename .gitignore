@@ -3,4 +3,4 @@ data/
 *.log
 .DS_Store
 dist/*.fpk
-!dist/edge-0.6.3.fpk
+!dist/edge-0.8.0.fpk

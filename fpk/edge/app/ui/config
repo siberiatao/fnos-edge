@@ -2,11 +2,11 @@
     ".url": {
         "edge.Application": {
             "title": "Edge",
+            "desc": "Microsoft Edge Web UI",
             "icon": "images/icon_{0}.png",
             "type": "url",
-            "protocol": "https",
-            "port": "3443",
-            "url": "/edge/",
+            "protocol": "http",
+            "port": "3002",
             "allUsers": false
         }
     }

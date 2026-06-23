@@ -8,5 +8,11 @@ mkdir -p /var/apps/edge/shares/downloads
 rm -rf /var/apps/edge/shares/data/config/.XDG
 rm -rf /var/apps/edge/shares/data/config/.cache/labwc
 rm -f /var/apps/edge/shares/data/config/.Xauthority
+rm -f /var/apps/edge/shares/data/config/start-edge.sh
+rm -f /var/apps/edge/shares/data/config/edge-autolaunch.sh
+rm -f /var/apps/edge/shares/data/config/edge-autolaunch.log
+rm -f /var/apps/edge/shares/data/config/edge-autolaunch-daemon.log
+rm -f /var/apps/edge/shares/data/config/.config/labwc/autostart
+rm -f /var/apps/edge/shares/data/config/.config/openbox/autostart
 
 exit 0

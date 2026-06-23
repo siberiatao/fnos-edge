@@ -3,19 +3,10 @@
 FILE_PATH="${TRIM_APPDEST}/app/docker-compose.yaml"
 
 is_docker_running() {
-    DOCKER_NAME=""
-
-    if [ -f "$FILE_PATH" ]; then
-        DOCKER_NAME=$(grep "container_name" "$FILE_PATH" | awk -F ':' '{print $2}' | xargs)
-        echo "DOCKER_NAME is set to: $DOCKER_NAME"
-    fi
-
-    if [ -n "$DOCKER_NAME" ]; then
-        docker inspect "$DOCKER_NAME" | grep -q "\"Status\": \"running\"," || exit 1
-        return
-    fi
-
-    exit 1
+    for docker_name in edge; do
+        echo "Checking Docker container: $docker_name"
+        docker inspect "$docker_name" | grep -q "\"Status\": \"running\"," || exit 1
+    done
 }
 
 case "$1" in

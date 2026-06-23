@@ -28,12 +28,13 @@
         "items": [
             {
                 "type": "tips",
-                "helpText": "安装完成后，通过 https://你的设备:容器HTTPS端口/edge/ 访问。默认端口为 3443。"
+                "helpText": "安装完成后，优先从 fnOS 桌面入口打开。FN Connect 会按端口型应用生成类似 https://edge.你的飞牛域名/ 的入口；DDNS/IP 直连可用 http://你的DDNS或IP:3002/。"
             },
             {
                 "type": "text",
                 "field": "server_port",
                 "label": "容器 HTTPS 端口",
+                "helpText": "直连备用端口，适合局域网 IP 直连。统一网关/FN Connect 不依赖此端口。",
                 "initValue": "3443"
             },
             {
@@ -52,13 +53,6 @@
                         "message": "请设置访问密码"
                     }
                 ]
-            },
-            {
-                "type": "text",
-                "field": "startup_url",
-                "label": "默认启动页",
-                "helpText": "用于避免 Edge 首次运行页或恢复会话偶发黑屏。可改成你常用的网址。",
-                "initValue": "https://www.bing.com"
             }
         ]
     },
@@ -91,27 +85,6 @@
                 "label": "PGID",
                 "helpText": "建议填写阶段一验证通过的用户 GID。你的 NAS 之前是 1001。",
                 "initValue": "1001"
-            },
-            {
-                "type": "text",
-                "field": "max_res",
-                "label": "最大分辨率",
-                "helpText": "远程桌面的最大画布。默认 1920x1080 更稳，4K 可手动改为 3840x2160。",
-                "initValue": "1920x1080"
-            },
-            {
-                "type": "text",
-                "field": "edge_window_size",
-                "label": "Edge 初始窗口尺寸",
-                "helpText": "默认不贴满屏幕，给扩展确认框、菜单等弹窗留出边界空间。",
-                "initValue": "1600,900"
-            },
-            {
-                "type": "text",
-                "field": "edge_window_position",
-                "label": "Edge 初始窗口位置",
-                "helpText": "格式为 x,y。默认 40,40，避免窗口贴边导致弹窗被裁切。",
-                "initValue": "40,40"
             },
             {
                 "type": "text",

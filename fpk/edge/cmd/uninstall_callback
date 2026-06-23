@@ -8,9 +8,16 @@ if command -v docker >/dev/null 2>&1; then
     docker rm -f edge >/dev/null 2>&1 || true
 fi
 
+rm -f /var/apps/edge/target/edge.sock
 rm -rf /var/apps/edge/shares/data/config/.XDG
 rm -rf /var/apps/edge/shares/data/config/.cache/labwc
 rm -f /var/apps/edge/shares/data/config/.Xauthority
+rm -f /var/apps/edge/shares/data/config/start-edge.sh
+rm -f /var/apps/edge/shares/data/config/edge-autolaunch.sh
+rm -f /var/apps/edge/shares/data/config/edge-autolaunch.log
+rm -f /var/apps/edge/shares/data/config/edge-autolaunch-daemon.log
+rm -f /var/apps/edge/shares/data/config/.config/labwc/autostart
+rm -f /var/apps/edge/shares/data/config/.config/openbox/autostart
 
 if [ "$wizard_delete_data" = "true" ]; then
     rm -rf /var/apps/edge/shares/data/config

@@ -14,7 +14,7 @@ Phase 2 adds an fnOS FPK-style application source tree under
 `fpk/edge` and a locally generated package:
 
 ```text
-dist/edge-0.6.3.fpk
+dist/edge-0.8.0.fpk
 ```
 
 Follow [docs/FPK_PHASE2.md](docs/FPK_PHASE2.md) for package testing.
@@ -24,10 +24,11 @@ Follow [docs/FPK_PHASE2.md](docs/FPK_PHASE2.md) for package testing.
 - App name: `edge`
 - Display name: `Edge`
 - Image: `lscr.io/linuxserver/msedge:latest`
-- Default access: `https://<fnOS-host>:3443/edge/`
+- Default FN Connect access: `https://edge.<fnOS-connect-domain>/`
+- Direct HTTP fallback access: `http://<fnOS-host>:3002/`
+- Direct HTTPS fallback access: `https://<fnOS-host>:3443/`
 - Default runtime user: `PUID=1000`, `PGID=1001`
 - Default remote desktop max resolution: `1920x1080`
-- Default Edge window: `1600,900` at `40,40`
 
 ## Roadmap
 
